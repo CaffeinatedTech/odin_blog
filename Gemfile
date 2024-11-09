@@ -23,6 +23,7 @@ gem "jbuilder"
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo', '~> 2.0.6'
 gem "tzinfo-data", platforms: %i[ windows jruby ]
+gem 'concurrent-ruby', '~> 1.0'
 
 # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "solid_cache"
