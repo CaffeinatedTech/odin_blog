@@ -17,7 +17,17 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3.5'
-          bundler-cache: false
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libsqlite3-dev
 
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
